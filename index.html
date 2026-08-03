@@ -92,7 +92,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 80px 20px;
             text-align: center;
         }
@@ -103,9 +103,9 @@
         }
 
         .hero h1 {
-            font-size: 52px;
+            font-size: 56px;
             font-weight: 700;
-            color: #1a1a1a;
+            color: #ffffff;
             margin-bottom: 16px;
             letter-spacing: -1px;
             line-height: 1.2;
@@ -130,17 +130,44 @@
             text-align: center;
             flex: 1;
             min-width: 150px;
+            padding: 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            animation: slideUpIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .trust-item:nth-child(1) { animation-delay: 0.1s; }
+        .trust-item:nth-child(2) { animation-delay: 0.2s; }
+        .trust-item:nth-child(3) { animation-delay: 0.3s; }
+        .trust-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .trust-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-8px);
         }
 
         .trust-item .icon {
             font-size: 32px;
             margin-bottom: 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .trust-item:hover .icon {
+            transform: scale(1.3) rotate(5deg);
+            animation: bounce 0.6s ease;
         }
 
         .trust-item p {
             font-size: 13px;
             font-weight: 600;
             color: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        .trust-item:hover p {
+            color: #667eea;
         }
 
         .hero-buttons {
@@ -302,7 +329,7 @@
         /* About Section */
         .about {
             padding: 80px 20px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         .about-content {
@@ -402,7 +429,7 @@
 /* Form Section */
         .form-section {
             padding: 80px 20px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         .form-container {
@@ -645,6 +672,185 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ANIMATIONS */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced Product Card Hover */
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px) scale(1.02) !important;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2) !important;
+            border-color: #667eea;
+        }
+
+        .product-image img {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        .product-card h3:hover {
+            color: #667eea;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, #f5f7ff 0%, #f0e8ff 100%);
+            padding: 80px 20px;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.15);
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 18px;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 16px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #1a1a1a;
+            font-size: 14px;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: #999;
+        }
+
+
+        
+
+
+        
+
+
+        /* Fixed Carousel - Right to Left Animation */
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOutToLeft {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes fadeInGlow {
+            0%, 100% {
+                opacity: 0.8;
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            }
+        }
+
+        @keyframes slideUpIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: scale(1.3) rotate(5deg);
+            }
+            50% {
+                transform: scale(1.4) rotate(5deg);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -675,7 +881,7 @@
                 <a href="#products" class="btn-secondary">View Our Products</a>
             </div>
 
-            <p style="margin-top: 24px; color: #999; font-size: 13px;">No middlemen. No shortcuts. Just honest farm produce, the way nature intended.</p>
+            <p style="margin-top: 24px; color: #ffffff; font-size: 13px; animation: fadeInGlow 2s ease-in-out infinite; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);">No middlemen. No shortcuts. Just honest farm produce, the way nature intended.</p>
 
             <div class="hero-trust">
                 <div class="trust-item">
@@ -699,6 +905,10 @@
     </section>
 
     <!-- Products Section -->
+
+    <!-- Values Section with Sliding Animation -->
+
+
     <section class="products" id="products">
         <div class="section-container">
 <div class="section-heading">
@@ -871,6 +1081,51 @@
     </section>
 
 <!-- Form Section -->
+        <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The milk quality is exceptional! Fresh, pure, and delivered on time every single day."</p>
+                    <p class="testimonial-author">Rajesh Kumar</p>
+                    <p class="testimonial-role">Family of 4, Coimbatore</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The paneer is absolutely delicious! Pure farm goodness. No artificial taste whatsoever."</p>
+                    <p class="testimonial-author">Priya Sharma</p>
+                    <p class="testimonial-role">Chef & Food Blogger</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Best ghee I've ever used! The aroma is incredible and perfect for cooking. Highly recommended!"</p>
+                    <p class="testimonial-author">Anita Patel</p>
+                    <p class="testimonial-role">Homemaker, Coimbatore</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Country chicken is so flavorful! Naturally raised quality. WhatsApp ordering is super convenient."</p>
+                    <p class="testimonial-author">Vikram Singh</p>
+                    <p class="testimonial-role">Restaurant Owner</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Farm-fresh eggs with deep yellow yolks! My family loves them. Worth every penny. Thank you!"</p>
+                    <p class="testimonial-author">Meera Nair</p>
+                    <p class="testimonial-role">Mother of 3</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The butter is creamy perfection! Supporting a family farm that truly cares about quality."</p>
+                    <p class="testimonial-author">Deepak Malhotra</p>
+                    <p class="testimonial-role">Fitness Coach & Nutritionist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="form-section">
         <div class="form-container">
             <div class="form-heading">
